@@ -120,7 +120,7 @@ export default function Home({}: Props) {
         const categories = getCategoriesFromOrders(response.orders);
 
         data.lanes[0].cards.push({
-          id: `card-${Math.random()}`,
+          id: response.id,
           title: `[# ${response.tableNo ?? '00'}] ${response.customer ?? '-'}`,
           description: (
             <RenderKanbanCard
@@ -138,7 +138,9 @@ export default function Home({}: Props) {
         setData({ ...data });
         setListOrders([...listOrders, response]);
       } else {
-        alert('Order already exist');
+        alert(
+          `Order for [# ${isOrderExist.tableNo}] ${isOrderExist.customer} already exist`
+        );
       }
     }
   };
