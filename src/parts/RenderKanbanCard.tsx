@@ -16,25 +16,34 @@ export default function RenderKanbanCard({ data }: any) {
               .filter((order: any) => order.category === category)
               .map((order: any, orderIndex) => (
                 <div
-                  className="flex gap-x-2 items-center"
+                  className="block mb-1"
                   key={`${categoryIndex}-${orderIndex}`}
                 >
-                  <Img
-                    height={40}
-                    width={40}
-                    alt={'item'}
-                    classname="object-cover rounded-md"
-                    layout={'fixed'}
-                    src={order.item.image}
-                  />
+                  <div className="flex gap-x-2 items-center">
+                    <Img
+                      height={40}
+                      width={40}
+                      alt={'item'}
+                      classname="object-cover rounded-md"
+                      layout={'fixed'}
+                      src={order.item.image}
+                    />
 
-                  <div className="detail py-1">
-                    <h3 className="text-sm">{order.item.name ?? '-'}</h3>
-                    <p className="text-xs">
-                      {order.qty} x $ {formatCurrency(order.item.price)}
-                    </p>
-                    <p className="text-xs font-bold mt-1">
-                      $ {formatCurrency(order.subtotal)}
+                    <div className="detail py-1">
+                      <h3 className="text-sm">{order.item.name ?? '-'}</h3>
+                      <p className="text-xs">
+                        {order.qty} x $ {formatCurrency(order.item.price)}
+                      </p>
+                      <p className="text-xs font-bold mt-1">
+                        $ {formatCurrency(order.subtotal)}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="border border-orange-600 rounded-md p-2">
+                    <p>
+                      <b>Notes: </b>{' '}
+                      {order.notes.length > 0 ? order.notes : '-'}
                     </p>
                   </div>
                 </div>
