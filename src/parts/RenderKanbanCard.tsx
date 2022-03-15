@@ -28,7 +28,7 @@ export default function RenderKanbanCard({ data }: any) {
                     src={order.item.image}
                   />
 
-                  <div className="detail border-b py-1">
+                  <div className="detail py-1">
                     <h3 className="text-sm">{order.item.name ?? '-'}</h3>
                     <p className="text-xs">
                       {order.qty} x $ {formatCurrency(order.item.price)}
