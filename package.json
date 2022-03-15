@@ -15,6 +15,7 @@
   "dependencies": {
     "@asseinfo/react-kanban": "^2.2.0",
     "axios": "^0.23.0",
+    "kanban-board-from-react-trello": "^2.4.3",
     "next": "12.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.1",

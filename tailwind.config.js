@@ -22,14 +22,20 @@ module.exports = {
         red: {
           200: '#FF0B09',
         },
+        orange: {
+          600: '#FFB72B',
+        },
+        yellow: {
+          100: '#fdffa9',
+        },
       },
     },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1140px',
-      '2xl': '1140px',
+      xl: '1280px',
+      '2xl': '1280px',
     },
     colors: defaultColor,
     columns: {

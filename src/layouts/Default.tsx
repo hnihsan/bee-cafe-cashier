@@ -5,7 +5,7 @@ const Default = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Bee Cafe</title>
+        <title>Bee Cafe - Cashier</title>
       </Head>
       <main>
         <Header />
