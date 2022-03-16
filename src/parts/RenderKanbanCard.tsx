@@ -70,7 +70,7 @@ export default function RenderKanbanCard({ data }: any) {
 
       {!isShow && (
         <div
-          className="flex justify-between items-center transition-all duration-300"
+          className="flex justify-between items-center transition-all duration-300 border shadow p-2 rounded-md hover:bg-gray-50"
           onClick={() => setIsModalShow(true)}
         >
           <div className="items flex">
