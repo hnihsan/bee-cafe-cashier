@@ -154,7 +154,7 @@ export default function Home({}: Props) {
 
   return (
     <div className="mt-8">
-      <Card className="p-4 bg-white my-3 w-full md:w-3/5 mx-auto">
+      <Card className="p-4 bg-white my-3 w-full md:w-3/5 mx-auto shadow-md">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="username"
@@ -169,7 +169,7 @@ export default function Home({}: Props) {
         />
       </Card>
 
-      <div className="container">
+      <div className="container w-full md:w-8/12">
         <Board
           data={data}
           style={{
@@ -177,6 +177,10 @@ export default function Home({}: Props) {
             padding: '25px',
             display: 'flex',
             justifyContent: 'center',
+            backgroundColor: '#ffb72b',
+          }}
+          laneStyle={{
+            backgroundColor: '#fdffa9',
           }}
           onDataChange={handleOnDataChange}
         />
