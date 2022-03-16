@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Board from 'kanban-board-from-react-trello';
-import { Card } from '@styles/global.style';
-import RenderKanbanCard from '@parts/RenderKanbanCard';
-import { Bee } from "@ethersphere/bee-js"
+import React, { useState } from "react";
+import Board from "kanban-board-from-react-trello";
+import { Card } from "@styles/global.style";
+import RenderKanbanCard from "@parts/RenderKanbanCard";
+import { Bee } from "@ethersphere/bee-js";
 
 type Props = {};
 
@@ -26,49 +26,54 @@ export default function Home({}: Props) {
   const [data, setData] = useState({
     lanes: [
       {
-        id: 'new-order-lane',
-        title: 'New Orders',
-        label: '0',
+        id: "new-order-lane",
+        title: "New Orders",
+        label: "0",
         cards: [],
       },
       {
-        id: 'doing-lane',
-        title: 'Doing',
-        label: '0',
+        id: "doing-lane",
+        title: "Doing",
+        label: "0",
         cards: [],
       },
       {
-        id: 'served-lane',
-        title: 'Served',
-        label: '0',
+        id: "served-lane",
+        title: "Served",
+        label: "0",
         cards: [],
       },
     ],
   });
 
   const handleKeyDown = async (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       try {
         const swarmData = await bee.downloadData(orderReference);
-        const response : any = swarmData.json()
+        const response: any = swarmData.json();
 
-        const isOrderExist = listOrders.find((order) => order.id === response.id);
+        const isOrderExist = listOrders.find(
+          (order) => order.id === response.id
+        );
         if (!isOrderExist) {
           const categories = getCategoriesFromOrders(response.orders);
 
-          data.lanes[0].cards.push({
+          data.lanes[0].cards.unshift({
             id: response.id,
-            title: `[# ${response.tableNo ?? '00'}] ${response.customer ?? '-'}`,
+            title: `[# ${response.tableNo ?? "00"}] ${
+              response.customer ?? "-"
+            }`,
             description: (
               <RenderKanbanCard
                 data={{
                   categories,
-                  items: response.orders,
+                  order: response,
                 }}
               />
             ),
             label: `${response.orders.length} Items`,
-            laneId: 'new-order-lane',
+            laneId: "new-order-lane",
+            metadata: response,
           });
           data.lanes[0].label = data.lanes[0].cards.length.toString();
 
@@ -81,9 +86,7 @@ export default function Home({}: Props) {
         }
       } catch (error) {
         console.log(error);
-        alert(
-          `Invalid Order Reference`
-        );
+        alert(`Invalid Order Reference`);
       } finally {
         setOrderReference("");
       }
@@ -120,14 +123,14 @@ export default function Home({}: Props) {
         <Board
           data={data}
           style={{
-            borderRadius: '6px',
-            padding: '25px',
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#ffb72b',
+            borderRadius: "6px",
+            padding: "25px",
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#ffb72b",
           }}
           laneStyle={{
-            backgroundColor: '#fdffa9',
+            backgroundColor: "#fdffa9",
           }}
           onDataChange={handleOnDataChange}
         />
