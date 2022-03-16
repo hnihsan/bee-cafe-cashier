@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Board from 'kanban-board-from-react-trello';
 import { Card } from '@styles/global.style';
 import RenderKanbanCard from '@parts/RenderKanbanCard';
+import DetailOrderModal from '@components/Modal/DetailOrderModal';
 
 type Props = {};
 
@@ -119,19 +120,20 @@ export default function Home({}: Props) {
       if (!isOrderExist) {
         const categories = getCategoriesFromOrders(response.orders);
 
-        data.lanes[0].cards.push({
+        data.lanes[0].cards.unshift({
           id: response.id,
           title: `[# ${response.tableNo ?? '00'}] ${response.customer ?? '-'}`,
           description: (
             <RenderKanbanCard
               data={{
                 categories,
-                items: response.orders,
+                order: response,
               }}
             />
           ),
           label: `${response.orders.length} Items`,
           laneId: 'new-order-lane',
+          metadata: response,
         });
         data.lanes[0].label = data.lanes[0].cards.length.toString();
 
