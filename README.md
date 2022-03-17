@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bee Cafe - Cashier
+
+In Participation for We Are Millions Hackathon, a submission for [Best Demonstration Of Data Interoperability Using Swarm](https://gitcoin.co/issue/fairdatasociety/wam/2/100027831)
+
+## Descriptions
+
+Bee Cafe is a simple DApp for demonstrating how data can be used interoperably for communicating between DApps.
+Bee Cafe consist of 2 DApps, with the following Repository :
+
+1. [Bee Cafe - Customer](https://github.com/hnihsan/bee-cafe-customer)
+2. [Bee Cafe - Cashier](https://github.com/hnihsan/bee-cafe-cashier)
+
+Please setup the other Repo to achieve demonstration result completely.
+
+## How It Works
+
+This DApps will demonstrate how we use SWARM to basically upload and download data, in a use case of a Cafe.
+User can choose a variety of items, and then order it. The DApp will then upload the selected menu items data to SWARM, generating it's Order Reference code and then the Cashier DApp will accepting the reference code, downloading and converting the data from SWARM to a list of _New Orders_ to be processed and served.
+
+## Demonstrations Video
+
+You can see how the DApps works here:
+https://www.youtube.com/
+
+# Installation
+
+## Requirement
+
+- NodeJS + NPM
+- Bee SWARM Node running locally (see [Bee Factory](https://github.com/ethersphere/bee-factory) to setup your own node for Development Environment)
 
 ## Getting Started
 
-First, run the development server:
+First, install, build and start the project:
 
 ```bash
-npm run start:dev
-# or
-yarn start:dev
+npm install
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open [http://localhost:3030](http://localhost:3000) with your browser to see the Bee Cafe - Cashier DApp.
