@@ -4,7 +4,7 @@ In Participation for We Are Millions Hackathon, a submission for [Best Demonstra
 
 ## Descriptions
 
-Bee Cafe is a simple DApp for demonstrating how data can be used interoperably for communicating between DApps.
+Bee Cafe is a simple DApp for demonstrating how data in SWARM can be used interoperably for communicating between DApps.
 Bee Cafe consist of 2 DApps, with the following Repository :
 
 1. [Bee Cafe - Customer](https://github.com/hnihsan/bee-cafe-customer)
