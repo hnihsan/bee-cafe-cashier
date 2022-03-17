@@ -22,6 +22,11 @@ User can choose a variety of items, and then order it. The DApp will then upload
 You can see how the DApps works here:
 https://www.youtube.com/
 
+## Team Members
+
+- hnihsan - [GitHub](https://github.com/hnihsan) - [Gitcoin](https://gitcoin.co/hnihsan) - Email: [helmi.n.ihsan@gmail.com](mailto:helmi.n.ihsan@gmail.com) - Discord: [hnihsan#8820](https://discordapp.com/users/513001948098723864)
+- NicoSiput - [GitHub](https://github.com/NicoSiput) - [Gitcoin](https://gitcoin.co/nicosiput) - Email: [nicosiput@gmail.com](mailto:nicosiput@gmail.com) - Discord: [NicoSiput#2643](https://discordapp.com/users/524064020437925888)
+
 # Installation
 
 ## Requirement
